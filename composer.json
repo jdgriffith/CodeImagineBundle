@@ -1,0 +1,22 @@
+{
+  "name": "CodeImagine",
+  "license": "MIT",
+  "type": "symfony-bundle",
+  "description": "Library for generating code",
+  "autoload": {
+    "classmap": [ "Classes" ],
+    "psr-4": { "Classes\\": "" }
+  },
+  "require": {
+    "php": ">=5.3.3",
+    "symfony/framework-bundle": "~2.3|~3.0",
+    "symfony/console": "~2.3|~3.0"
+  },
+  "require-dev": {
+    "sensio/generator-bundle": "~2.3",
+    "codeclimate/php-test-reporter": "dev-master"
+  },
+  "config": {
+    "bin-dir": "bin"
+  }
+}
