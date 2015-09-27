@@ -1,0 +1,2 @@
+# CodeImagineBundle
+Code generation bundle
