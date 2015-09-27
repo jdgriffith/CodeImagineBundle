@@ -1,5 +1,5 @@
 {
-  "name": "jdgriffith/CodeImagine-Bundle",
+  "name": "jdgriffith/Imagine-Bundle",
   "license": "MIT",
   "type": "symfony-bundle",
   "description": "bundle for generating code",

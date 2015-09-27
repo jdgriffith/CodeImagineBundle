@@ -1,4 +1,4 @@
-Code Imagine Bundle
+Imagine Bundle
 ========
 
 [![Build Status](https://api.shippable.com/projects/54f27f7b5ab6cc13528fd49d/badge?branchName=master)](https://app.shippable.com/projects/54f27f7b5ab6cc13528fd49d/builds/latest) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/de432dc1-43ff-4228-b4db-30b244241724/mini.png)](https://insight.sensiolabs.com/projects/de432dc1-43ff-4228-b4db-30b244241724)
