@@ -1,8 +1,8 @@
 {
-  "name": "CodeImagine",
+  "name": "jdgriffith/CodeImagine-Bundle",
   "license": "MIT",
   "type": "symfony-bundle",
-  "description": "Library for generating code",
+  "description": "bundle for generating code",
   "autoload": {
     "classmap": [ "Classes" ],
     "psr-4": { "Classes\\": "" }
