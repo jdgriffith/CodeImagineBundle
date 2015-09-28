@@ -32,13 +32,20 @@ class GenerateClassCommand extends ContainerAwareCommand
         $pwd = trim(`pwd`);
 
         if ($file) {
-            $yaml = Yaml::parse(file_get_contents($pwd.'/'.$file));
 
+            // Parse the yaml
+            $yamlParser = new Yaml();
+            $yaml = $yamlParser->parse(file_get_contents($pwd.'/'.$file));
+
+            // translate the yaml
             $classTranslator = new YamlToClassTranslator($yaml);
 
+            // get classes
             $classes = $classTranslator->getClasses();
 
+            // write each class to file
             foreach ($classes as $key => $class) {
+
                 $classWriter = new ClassWriter($class, new FileSystem(), $pwd.'/GeneratedClasses/');
                 $classWriter->write();
             }

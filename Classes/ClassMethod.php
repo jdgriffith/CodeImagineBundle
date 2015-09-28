@@ -56,9 +56,14 @@ class ClassMethod implements GeneratorInterface
     /**
      * @param $name
      */
-    public function __construct($name)
+    public function __construct($name, ReflectionMethod $reflectionMethod = null)
     {
         $this->name = $name;
+
+        // if reflection method passed
+        if ($reflectionMethod != null) {
+            $this->convertReflectionMethod($reflectionMethod);
+        }
     }
 
     /**
@@ -268,16 +273,15 @@ class ClassMethod implements GeneratorInterface
      *
      * @return ClassMethod
      */
-    public static function convertReflectionMethod(ReflectionMethod $method)
+    public function convertReflectionMethod(ReflectionMethod $method)
     {
-        $classMethod = new self($method->getName());
+        // just in case not already set
+        $this->name = $method->getName();
 
         foreach ($method->getParameters() as $key => $param) {
             $methodParam = new MethodParameter($param->getName(), 'string');
 
-            $classMethod->addParameter($methodParam);
+            $this->addParameter($methodParam);
         }
-
-        return $classMethod;
     }
 }

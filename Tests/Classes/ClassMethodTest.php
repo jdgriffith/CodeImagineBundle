@@ -35,15 +35,15 @@ class ClassMethodTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers ::convertReflectionMethod
      */
-    public function testConverReflectionMethod()
+    public function testConvertReflectionMethod()
     {
         $reflectionClass = new \ReflectionClass($this);
         $method = $reflectionClass->getMethod('dummyMethod');
 
         /** @var ClassMethod $classMethod */
-        $classMethod = $this->classMethod->convertReflectionMethod($method);
+        $this->classMethod->convertReflectionMethod($method);
 
-        $methodParams = $classMethod->getParameters();
+        $methodParams = $this->classMethod->getParameters();
 
         $this->assertInstanceOf('\Classes\MethodParameter', $methodParams[0]);
     }

@@ -213,7 +213,8 @@ class ClassGenerator implements GeneratorInterface
             $reflection = new \ReflectionClass($implement);
 
             foreach ($reflection->getMethods() as $method) {
-                $implementor = ClassMethod::convertReflectionMethod($method);
+
+                $implementor = new ClassMethod($method->name, $method);
                 $implementor->setDescription('Implementation of '.$method->getName().' interface method');
                 $implementor->setBody(' // TODO: Code implementation');
 

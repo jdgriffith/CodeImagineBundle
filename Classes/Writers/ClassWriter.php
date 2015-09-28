@@ -37,12 +37,12 @@ class ClassWriter implements WriterInterface
         $this->baseClass = $baseClass;
         $this->fileSystem = $fileSystem;
 
+        $this->path = new \SplFileInfo(__DIR__);
+
         if (is_object($path) && is_a($path, 'SplFileInfo')) {
             $this->path = $path;
         } elseif (!empty($path)) {
             $this->path = new \SplFileInfo($path);
-        } else {
-            $this->path = new \SplFileInfo(__DIR__);
         }
     }
 
