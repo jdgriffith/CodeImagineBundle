@@ -54,7 +54,7 @@ class ClassMethod implements GeneratorInterface
     private $annotations;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param $name
      * @param ReflectionMethod|null $reflectionMethod
