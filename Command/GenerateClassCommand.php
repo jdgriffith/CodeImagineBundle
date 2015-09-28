@@ -45,7 +45,6 @@ class GenerateClassCommand extends ContainerAwareCommand
 
             // write each class to file
             foreach ($classes as $class) {
-
                 $classWriter = new ClassWriter($class, new FileSystem(), $pwd.'/GeneratedClasses/');
                 $classWriter->write();
             }
