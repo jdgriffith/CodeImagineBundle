@@ -1,8 +1,14 @@
 
 engines:
-  phpcodesniffer:
+  rubocop:
     enabled: true
-  phpmd:
+  golint:
+    enabled: true
+  gofmt:
+    enabled: true
+  eslint:
+    enabled: true
+  csslint:
     enabled: true
 
 # Engines can analyze files and report issues on them, but you can separately
