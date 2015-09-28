@@ -40,7 +40,7 @@ class ClassMethodTest extends \PHPUnit_Framework_TestCase
         $reflectionClass = new \ReflectionClass($this);
         $method = $reflectionClass->getMethod('dummyMethod');
 
-        /** @var ClassMethod $classMethod */
+        /* @var ClassMethod $classMethod */
         $this->classMethod->convertReflectionMethod($method);
 
         $methodParams = $this->classMethod->getParameters();
