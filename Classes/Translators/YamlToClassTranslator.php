@@ -62,7 +62,7 @@ class YamlToClassTranslator
         }
 
         if (isset($class->useStatements)) {
-            foreach ($class->useStatements as $key => $useStatement) {
+            foreach ($class->useStatements as $useStatement) {
                 $baseClass->addUseStatement(new UseStatement($useStatement));
             }
         }
@@ -100,8 +100,8 @@ class YamlToClassTranslator
             $classMethod = new ClassMethod($key);
 
             if (isset($method->parameters)) {
-                foreach ($method->parameters as $key => $param) {
-                    $classMethod->addParameter(new MethodParameter($key, $param['type']));
+                foreach ($method->parameters as $paramKey => $param) {
+                    $classMethod->addParameter(new MethodParameter($paramKey, $param['type']));
                 }
             }
 

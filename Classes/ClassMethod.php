@@ -54,7 +54,10 @@ class ClassMethod implements GeneratorInterface
     private $annotations;
 
     /**
+     * Constructor
+     *
      * @param $name
+     * @param ReflectionMethod|null $reflectionMethod
      */
     public function __construct($name, ReflectionMethod $reflectionMethod = null)
     {
@@ -278,7 +281,7 @@ class ClassMethod implements GeneratorInterface
         // just in case not already set
         $this->name = $method->getName();
 
-        foreach ($method->getParameters() as $key => $param) {
+        foreach ($method->getParameters() as $param) {
             $methodParam = new MethodParameter($param->getName(), 'string');
 
             $this->addParameter($methodParam);

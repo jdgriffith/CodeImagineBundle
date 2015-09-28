@@ -44,7 +44,7 @@ class GenerateClassCommand extends ContainerAwareCommand
             $classes = $classTranslator->getClasses();
 
             // write each class to file
-            foreach ($classes as $key => $class) {
+            foreach ($classes as $class) {
 
                 $classWriter = new ClassWriter($class, new FileSystem(), $pwd.'/GeneratedClasses/');
                 $classWriter->write();

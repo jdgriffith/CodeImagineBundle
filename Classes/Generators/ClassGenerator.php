@@ -104,7 +104,7 @@ class ClassGenerator implements GeneratorInterface
         if (count($this->baseClass->getImplements()) > 0) {
             $implements = [];
 
-            foreach ($this->baseClass->getImplements() as $key => $interface) {
+            foreach ($this->baseClass->getImplements() as $interface) {
                 $className = explode('\\', $interface);
                 $implements[] = end($className);
             }
@@ -141,7 +141,7 @@ class ClassGenerator implements GeneratorInterface
         // Interface methods to be implemented
         $body .= $this->generateImplementMethods();
 
-        foreach ($this->baseClass->getMethods() as $key => $method) {
+        foreach ($this->baseClass->getMethods() as $method) {
             $body .= PHP_EOL.$method->generate().PHP_EOL;
         }
 
@@ -161,7 +161,7 @@ class ClassGenerator implements GeneratorInterface
             $annotations .= ' * @package '.$this->baseClass->getNameSpace().PHP_EOL;
         }
 
-        foreach ($this->baseClass->getAnnotations() as $key => $annotation) {
+        foreach ($this->baseClass->getAnnotations() as $annotation) {
             $annotations .= $annotation->generate().PHP_EOL;
         }
 
@@ -177,11 +177,11 @@ class ClassGenerator implements GeneratorInterface
     {
         $useStatements = PHP_EOL;
 
-        foreach ($this->baseClass->getUseStatements() as $key => $use) {
+        foreach ($this->baseClass->getUseStatements() as $use) {
             $useStatements .= $use->generate().PHP_EOL;
         }
 
-        foreach ($this->baseClass->getImplements() as $key => $interface) {
+        foreach ($this->baseClass->getImplements() as $interface) {
             $useStatement = new UseStatement($interface);
             $useStatements .= $useStatement->generate().PHP_EOL;
         }
@@ -196,7 +196,7 @@ class ClassGenerator implements GeneratorInterface
     {
         $output = '';
 
-        foreach ($this->baseClass->getProperties() as $key => $property) {
+        foreach ($this->baseClass->getProperties() as $property) {
             $classPropertyGenerator = new ClassPropertyGenerator($property);
 
             $output .= $classPropertyGenerator->generate();

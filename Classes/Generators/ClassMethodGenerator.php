@@ -84,7 +84,7 @@ class ClassMethodGenerator implements GeneratorInterface
         if ($this->classMethod->hasParameters()) {
             $docBlock .= $this->tab.' *'.PHP_EOL;
 
-            foreach ($this->classMethod->getParameters() as $key => $parameter) {
+            foreach ($this->classMethod->getParameters() as $parameter) {
                 $docBlock .= $this->generateSingleDocBlockLine($parameter, '@param');
             }
         }
@@ -102,7 +102,7 @@ class ClassMethodGenerator implements GeneratorInterface
         if ($this->classMethod->hasAnnotations()) {
             $docBlock .= $this->tab.' *'.PHP_EOL;
 
-            foreach ($this->classMethod->getAnnotations() as $key => $annotation) {
+            foreach ($this->classMethod->getAnnotations() as $annotation) {
                 $docBlock .= $this->generateSingleDocBlockLine($annotation);
             }
         }
@@ -147,7 +147,7 @@ METHOD;
     {
         $params = [];
 
-        foreach ($this->classMethod->getParameters() as $key => $parameter) {
+        foreach ($this->classMethod->getParameters() as $parameter) {
             $param = (!$parameter->isPrimitive()) ? $parameter->getType().' ' : '';
             $params[] = $param.'$'.$parameter->getName();
         }
