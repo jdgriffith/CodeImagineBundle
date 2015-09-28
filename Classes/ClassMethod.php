@@ -64,7 +64,7 @@ class ClassMethod implements GeneratorInterface
         $this->name = $name;
 
         // if reflection method passed
-        if ($reflectionMethod != null) {
+        if ($reflectionMethod !== null) {
             $this->convertReflectionMethod($reflectionMethod);
         }
     }
