@@ -131,7 +131,7 @@ class ClassGenerator implements GeneratorInterface
     {
         $body = '';
 
-        foreach ($this->baseClass->getProperties() as $key => $property) {
+        foreach ($this->baseClass->getProperties() as $property) {
             $body .= PHP_EOL.$property->generate().PHP_EOL;
         }
 
@@ -209,7 +209,7 @@ class ClassGenerator implements GeneratorInterface
     {
         $output = '';
 
-        foreach ($this->baseClass->getImplements() as $key => $implement) {
+        foreach ($this->baseClass->getImplements() as $implement) {
             $reflection = new \ReflectionClass($implement);
 
             foreach ($reflection->getMethods() as $method) {
